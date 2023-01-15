@@ -53,4 +53,17 @@ exports.editActivity = async (req, res) => {
     }
 }
 
+exports.deleteActivity = async (req, res) => {
+    try {
+        const result = await activities.deleteOne({ _id: req.body._id })
+        console.log("before query execution", result);
+        res.status(200).json({ message: result })
+    }
+    catch (error) {
+        res.status(500).json({ message: "in delete catch "+error })
+        console.log(error)
+    }
+
+}
+
 
