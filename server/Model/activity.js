@@ -18,7 +18,7 @@ var activitySchema = new Schema(
             required:[false, 'Please select one Activity type']
         },
         duration:{
-            type:Number,
+            type:String,
             required:[true, 'Activity Description is required']
         },
         date:{

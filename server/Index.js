@@ -2,8 +2,10 @@ const express = require('express');
 const app = express();
 const routes = require('./router/routes')
 const mongoose = require('mongoose');
+const cors = require('cors');
 
 // require('dotenv').config();
+app.use(cors());
 
 try {
     mongoose.connect('mongodb+srv://aisha_Kapadia:Chicken%4098@cluster0.4jnfayp.mongodb.net/activityDB',
@@ -24,5 +26,6 @@ process.on('UnhandledRejection', error => {
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use('/', routes);
+
 
 app.listen(3007);
